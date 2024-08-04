@@ -1,0 +1,143 @@
+
+/* Basic styles for body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-size:cover; 
+    background-position:center; 
+    /* background-repeat: no-repeat;     */
+    margin-bottom: 0;
+}
+
+/* Center the header image */
+/* header{
+    padding: 10px;
+} */
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-end;
+}
+
+.social-icons {
+    color: #4bbaff;
+    font-size: 17px;
+    text-align: right;
+}
+
+.social-icons i {
+    margin-left: 10px;
+}
+
+
+/* Style the navigation bar */
+nav {
+    background-color: #0000007f;
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: white;
+    /* text-align: center; */
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+nav ul li a:hover {
+    color:#4bbaff;
+}
+
+nav ul li.logout {
+    margin-left: auto; /* Push the logout button to the right */
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0000007f;
+    min-width:100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+}
+
+.dropdown-content a:hover {
+    color: #4bbaff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+section{
+    min-height: 500px; 
+}
+h1{
+    color:#ff0000;
+}
+.thead{
+    color: #4bbaff;
+}
+table{
+    background-color: #0000007f;
+}
+
+footer{
+    background-color: #0000007f;
+    border-radius: 8px;
+    padding: 1px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+button{
+    border: none;
+    border-radius: 3px;
+    padding:3px 8px;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+button[type="submit"]:hover {
+    background-color: #4bbaff;
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #4bbaff; 
+    color: white;
+}
+
+button[type="button"]:hover {
+    background-color: #4bbaff;
+    color: white;
+}
+

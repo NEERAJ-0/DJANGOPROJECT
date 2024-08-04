@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+{% block title %}Display Exam{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">   
+        <h1>Exams Master -DISPLAY</h1>
+            <table border="2" style="border-collapse: collapse; border-color: white; width: 20%; font-size: 20px;">
+            <tr class="thead"> <th>Exam ID</th> <th>Exam Type</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.examid}}</td>
+                <td>{{x.examtype}}</td>
+            </tr>
+            {% endfor %}  
+        </table>
+</div>
+{% endblock %} 

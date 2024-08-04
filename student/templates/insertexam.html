@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% block title %}Exam Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+         <h1>Exam Master -INSERT</h1>
+         <form method="post" action="{% url 'exam_entry' %}">
+            {% csrf_token %}
+            <table style="background-color: transparent; width: 25%; font-size: 20px;">
+
+                <tr>
+                    <td><label for="ExamId">Exam Id:</label></td>
+                    <td><input type="text" name="examid" required></td>
+                </tr>
+
+                <tr>
+                <td><label for="Examtype">Exam Type:</label></td>
+                <td><input type="text" name="examtype" required></td>
+                </tr>
+                         
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'insertexam' %}"><button type="button">Clear</button></a>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        {% if form.examid.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.examid.errors }}</div>
+                        {% endif %}
+                        {% if form.examtype.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.examtype.errors }}</div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+         </form>
+</div>
+{% endblock %} 

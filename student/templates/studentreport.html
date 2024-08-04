@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Student Report</title>
+    </head>
+    <body>
+        <div align="right">
+            <button onclick="window.print()">Print</button>
+            <a href="{% url 'home' %}"><button type="button">Home</button></a>   
+        </div>
+
+        <div align="center">
+            <h1>Student Master -REPORT</h1>
+            <h3>Students</h3>
+                <table  border="2" style="border-collapse: collapse; width: 80%; font-size: 25px;">
+                    <tr> <th>Batch</th>  <th>Course</th> <th>Semester</th> 
+                        <th>Student RegNo</th> <th>Student Name</th></tr>
+        
+                    {% for x in data %}
+        
+                    <tr align="center">
+                        <td>{{x.batchno}}</td>
+                        <td>{{x.course}}</td>
+                        <td>{{x.sem}}</td>               
+                        <td>{{x.studregno}}</td>
+                        <td align="left">{{x.studname}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </body>
+</html>

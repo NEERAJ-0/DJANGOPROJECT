@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+{% block title %}Display Course{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">         
+    <h1>Course Master -DISPLAY</h1>
+        <table border="2" style="border-collapse: collapse;  border-color: white;  width: 20%; font-size: 20px;">
+            <tr class="thead"> <th>Course ID</th> <th>Course</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.courseid}}</td>
+                <td>{{x.course}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>  
+{% endblock %} 

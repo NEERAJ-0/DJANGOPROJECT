@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block title %}Update Batch{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    {% if operation == "batch" %}
+    <h3>Data Updated Successfully...!</h3>
+    <a href="{% url 'updatebatch' %}"><button type="button">View</button></a>
+    {% else %}
+    <h1>Batch Master -UPDATE</h1>
+        <table border="2" style="border-collapse: collapse;border-color: white; width: 20%; font-size: 20px;">
+            <tr class="thead"> <th>Batch ID</th> <th>Batch NO</th> <th>Edit</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.batchid}}</td>
+                <td>{{x.batchno}}</td>
+                <td><a href ="{% url 'update2' x.id %}">
+                    <button type="button">Edit</button>
+                </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+        {% endif %}
+</div>  
+{% endblock %} 

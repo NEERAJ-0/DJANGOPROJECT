@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% block title %}Display Papers{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">       
+    <h1>Paper Master -DISPLAY</h1>
+            <table border="2" style="border-collapse: collapse; border-color: white; width: 60%; font-size: 20px;">
+            <tr class="thead"> <th>Paper Code</th> <th>Paper Type</th> <th>Paper ShotName</th> <th>Paper Name</th> </tr>
+
+            {% for x in data %}
+
+            <tr>
+                <td>{{x.papercode}}</td>
+                <td align="center">{{x.papertype}}</td>
+                <td align="center">{{x.papershtname}}</td>
+                <td>{{x.papername}}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+</div>   
+{% endblock %} 

@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block title %}Sem Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+         <h1>Sem Master -UPDATE</h1>
+         <form method="post">
+
+            {% csrf_token %}
+            <table style=" background-color: transparent; width: 25%; font-size: 20px;">
+                <tr>
+                <td><label for="SemId">Sem Id:</label></td>
+                <td>{{form.semid}}</td>
+                </tr>
+
+                <tr>
+                    <td><label for="Sem">Sem:</label></td>
+                    <td>{{form.sem}}</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'updatesem' %}"><button type="button">Cancel</button></a>
+                        <button type="submit">Save</button>
+                    </td>
+                </tr>
+            </table>
+         </form>
+</div>
+{% endblock %} 

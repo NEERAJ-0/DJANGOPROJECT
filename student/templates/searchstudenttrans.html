@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% block title %}Search Transactions{% endblock %}
+{% block content %}
+    <div align="center" style="color: white;">
+        <h1>Student Internal Transactions -SEARCH</h1>
+        <form method="get">
+            {{ form.as_p }}
+            <a style="color: #4bbaff;" href="{% url 'searchstudenttrans' %}">Clear</a>
+            <button type="submit">Search</button>
+        </form>
+        {% if results %}
+        <h3>Data Found</h3>
+        <table border="2" style="border-collapse: collapse;border-color: white; margin-top: 10px; width: 90%; font-size: 20px;">
+            <tr class="thead"> <th>Batch</th> <th>Course</th> <th>Semester</th> <th>StudentRegNo</th>
+                <th>StudentName</th> <th>ExamType</th> <th>PaperCode</th> <th>PaperName</th> <th>Marks</th></tr>
+
+            {% for item in results %}
+
+             <tr align="center">
+                <td>{{ item.batchno }}</td>
+                <td>{{ item.course }}</td>
+                <td>{{ item.sem }}</td>
+                <td>{{ item.studname.studregno }}</td>
+                <td align="left">{{ item.studname.studname }}</td>
+                <td>{{ item.examtype }}</td>
+                <td>{{ item.papername.papercode }}</td>
+                <td align="left">{{ item.papername }}</td>
+                <td>{{ item.marks }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% elif form.is_bound %}
+            <h2>Data Not Found</h2>
+        {% endif %}
+    </div>
+{% endblock %}

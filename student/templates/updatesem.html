@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block title %}Update Sem{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    {% if operation == "sem" %}
+    <h3>Data Updated Successfully...!</h3>
+    <a href="{% url 'updatesem' %}"><button type="button">View</button></a>
+    {% else %}
+    <h1>Sem Master -UPDATE</h1>
+        <table border="2" style="border-collapse: collapse;  border-color: white; width: 20%; font-size: 20px;">
+            <tr class="thead"> <th>Sem ID</th> <th>Semester</th> <th>Edit</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.semid}}</td>
+                <td>{{x.sem}}</td>
+                <td><a href ="{% url 'update3' x.id %}">
+                    <button type="button">Edit</button>
+                </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+        {% endif %}
+</div>  
+{% endblock %} 

@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+{% block title %}Display Sem{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+    <h1>Sem Master -DISPLAY</h1>
+        <table border="2" style="border-collapse: collapse; border-color: white; width: 20%; font-size: 20px;">
+            <tr class="thead"> <th>Sem ID</th> <th>Semester</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.semid}}</td>
+                <td>{{x.sem}}</td>
+            </tr>
+
+            {% endfor %}       
+        </table>
+</div>   
+{% endblock %} 

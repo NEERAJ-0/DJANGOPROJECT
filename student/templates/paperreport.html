@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Paper Report</title>
+    </head>
+    <body>
+        <div align="right">
+            <button onclick="window.print()">Print</button>
+            <a href="{% url 'home' %}"><button type="button">Home</button></a>   
+        </div>
+
+        <div align="center">       
+            <h1>Paper Master -REPORT</h1>
+            <h3>Papers</h3>
+                <table  border="2" style="border-collapse: collapse; width: 80%; font-size: 25px;">
+                    <tr> <th>Paper Code</th> <th>Paper Type</th> 
+                        <th>Paper ShotName</th> <th>Paper Name</th> </tr>
+
+                    {% for x in data %}
+
+                    <tr>
+                        <td>{{x.papercode}}</td>
+                        <td align="center">{{x.papertype}}</td>
+                        <td align="center">{{x.papershtname}}</td>
+                        <td>{{x.papername}}</td>
+                    </tr>
+
+                    {% endfor %}
+                </table>
+        </div>
+    </body>
+</html>

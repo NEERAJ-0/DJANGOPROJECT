@@ -1,0 +1,55 @@
+{% extends "master.html" %}
+{% block title %}Paper Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+         <h1>Paper Master -INSERT</h1>
+         <form method="post" action="{% url 'paper_entry' %}">
+            {% csrf_token %}
+            <table style=" background-color: transparent; width: 25%; font-size: 20px;">
+                <tr>
+                <td><label for="Paper Code">Paper Code:</label></td>
+                <td><input type="text" name="papercode" required></td>
+                </tr>
+
+                <tr>
+                <td><label for="Paper Type">Paper Type:</label></td>
+                <td><input type="text" name="papertype" required></td>
+                </tr>
+
+                <tr>
+                <td><label for="Paper Shtname">Paper ShortName:</label></td>
+                <td><input type="text" name="papershtname" required></td>
+                </tr>
+                
+                <tr>
+                <td><label for="Paper Name">Paper Name:</label></td>
+                <td><input type="text" name="papername" required></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'insertpaper' %}"><button type="button">Clear</button></a>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        {% if form.papercode.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.papercode.errors }}</div>
+                        {% endif %}
+                        {% if form.papertype.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.papertype.errors }}</div>
+                        {% endif %}
+                        {% if form.papershtname.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.papershtname.errors }}</div>
+                        {% endif %}
+                        {% if form.papername.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.papername.errors }}</div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+         </form>
+</div>
+{% endblock %} 

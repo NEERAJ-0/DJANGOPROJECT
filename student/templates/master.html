@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>SMMS</title> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body background="{% static 'img/banner1.jpg' %}">
+    <!--Header-->
+    <header>
+        <img src="{% static 'img/logo2.png' %}" alt="Logo">
+        <div class="social-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i><br>
+            <i class="fa-solid fa-envelope"></i>:mtimca@gmail.com
+            
+        </div>
+    </header>
+    <!--Navigation Bar-->
+    <nav>
+        <ul>
+            <li  class="dropdown">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Course</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertcourse' %}">Add</a>
+                    <a href="{% url 'deletecourse' %}">Delete</a>
+                    <a href="{% url 'updatecourse' %}">Edit</a>
+                    <a href="{% url 'searchcourse' %}">Search</a>
+                    <a href="{% url 'displaycourse' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Batch</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertbatch' %}">Add</a>
+                    <a href="{% url 'deletebatch' %}">Delete</a>
+                    <a href="{% url 'updatebatch' %}">Edit</a>
+                    <a href="{% url 'searchbatch' %}">Search</a>
+                    <a href="{% url 'displaybatch' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Semester</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertsem' %}">Add</a>
+                    <a href="{% url 'deletesem' %}">Delete</a>
+                    <a href="{% url 'updatesem' %}">Edit</a>
+                    <a href="{% url 'searchsem' %}">Search</a>
+                    <a href="{% url 'displaysem' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Paper</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertpaper' %}">Add</a>
+                    <a href="{% url 'deletepaper' %}">Delete</a>
+                    <a href="{% url 'updatepaper' %}">Edit</a>
+                    <a href="{% url 'searchpaper' %}">Search</a>
+                    <a href="{% url 'displaypaper' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Exam</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertexam' %}">Add</a>
+                    <a href="{% url 'deleteexam' %}">Delete</a>
+                    <a href="{% url 'updateexam' %}">Edit</a>
+                    <a href="{% url 'searchexam' %}">Search</a>
+                    <a href="{% url 'displayexam' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Student Details</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertstudent' %}">Add</a>
+                    <a href="{% url 'deletestudent' %}">Delete</a>
+                    <a href="{% url 'updatestudent' %}">Edit</a>
+                    <a href="{% url 'searchstudent' %}">Search</a>
+                    <a href="{% url 'displaystudent' %}">View</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Student Transactions</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'insertstudtrans' %}">Add</a>
+                    <a href="{% url 'deletestudenttrans' %}">Delete</a>
+                    <a href="{% url 'updatestudenttrans' %}">Edit</a>
+                    <a href="{% url 'searchstudenttrans' %}">Search</a>
+                    <a href="{% url 'displaystudenttrans' %}">View</a>
+                </div>
+            </li>
+            <li  class="dropdown">
+                <a href="#" class="dropbtn">Report</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'coursereport' %}">Course</a>
+                    <a href="{% url 'batchreport' %}">Batch</a>
+                    <a href="{% url 'semreport' %}">Semester</a>
+                    <a href="{% url 'examreport' %}">Exam</a>
+                    <a href="{% url 'paperreport' %}">Papers</a>
+                    <a href="{% url 'studentreport' %}">Students</a>
+                    <a href="{% url 'studtransreport' %}">Marks</a>
+                </div>
+            </li>
+            <li  class="dropdown logout">
+                <a href="{% url 'logout' %}">Logout <i class="fa-solid fa-power-off"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <h1 style="color: #4bbaff; text-align: center; font-size: 30px;">STUDENT MARKS MANAGEMENT SYSTEM</h1>
+    <!--section-->
+    <section>
+        
+            {% block content %}
+            {% endblock %}
+        
+    </section>
+
+    <!--footer-->
+    <footer>
+       <p>Copyright &copy; || All Rights Reserved.</p>  
+            <!-- designed by NEERAJ KUMAR -->
+    </footer>
+</body>
+</html>

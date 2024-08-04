@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block title %}Search Student{% endblock %}
+{% block content %}
+    <div align="center" style="color: white;">
+        <h1>Student Master -SEARCH</h1>
+        <form method="get">
+            {{ form.as_p }}
+            <a style="color: #4bbaff;" href="{% url 'searchstudent' %}">Clear</a>
+            <button type="submit">Search</button>
+        </form>
+        {% if results %}
+        <h3>Data Found</h3>
+        <table border="2" style="border-collapse: collapse;border-color: white; margin-top: 10px; width: 60%; font-size: 20px;">
+            <tr class="thead"> <th>Batch</th>  <th>Course</th> <th>Semester</th> 
+                <th>Student RegNo</th> <th>Student Name</th></tr>
+                
+            {% for item in results %}
+            <tr align="center">
+                <td>{{item.batchno}}</td>
+                <td>{{item.course}}</td>
+                <td>{{item.sem}}</td>               
+                <td>{{item.studregno}}</td>
+                <td>{{item.studname}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+            
+        {% elif form.is_bound %}
+            <h2>Data Not Found</h2>
+        {% endif %}
+    </div>
+{% endblock %}

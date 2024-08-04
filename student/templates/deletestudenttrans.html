@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% block title %}Delete Transaction{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    <h1>Student Internal Transaction -DELETE</h1>
+        <table border="2" style="border-collapse: collapse;  border-color: white; width: 90%; font-size: 20px;">
+            <tr class="thead"> <th>Batch</th> <th>Course</th> <th>Semester</th> <th>StudentRegNo</th>
+                <th>StudentName</th> <th>ExamType</th> <th>PaperCode</th> 
+                <th>PaperName</th> <th>Marks</th> <th>Delete</th></tr>
+
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.batchno}}</td>
+                <td>{{x.course}}</td>
+                <td>{{x.sem}}</td>
+                <td>{{x.studname.studregno}}</td>
+                <td align="left">{{x.studname.studname}}</td>
+                <td>{{x.examtype}}</td>
+                <td>{{x.papername.papercode}}</td>
+                <td align="left">{{x.papername}}</td>
+                <td>{{x.marks}}</td>
+                <td><a href ="{% url 'delete7' pk=x.id %}" onclick="return confirmDelete();">
+                    <button type="button">Delete</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
+<script>
+    function confirmDelete() {
+        return confirm('Delete this Transaction?');
+    }
+</script>  
+{% endblock %} 

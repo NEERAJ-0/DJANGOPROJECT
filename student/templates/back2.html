@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% block title %}Deletion{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+        <h3>Data Deleted Successfully...!</h3>
+        {% if operation == "course" %}
+        <a href="{% url 'deletecourse' %}"><button type="button">View</button></a>
+        {% elif operation == "batch" %}
+        <a href="{% url 'deletebatch' %}"><button type="button">View</button></a>
+        {% elif operation == "sem" %}
+        <a href="{% url 'deletesem' %}"><button type="button">View</button></a>
+        {% elif operation == "paper" %}
+        <a href="{% url 'deletepaper' %}"><button type="button">View</button></a>
+        {% elif operation == "exam" %}
+        <a href="{% url 'deleteexam' %}"><button type="button">View</button></a>
+        {% elif operation == "student" %}
+        <a href="{% url 'deletestudent' %}"><button type="button">View</button></a>
+        {% elif operation == "transaction" %}
+        <a href="{% url 'deletestudenttrans' %}"><button type="button">View</button></a>
+        {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% block title %}Batch Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+         <h1 >Batch Master -INSERT</h1>
+         <form method="post" action="{% url 'batch_entry' %}">
+            {% csrf_token %}
+            <table style=" background-color: transparent; width: 25%; font-size: 20px;">
+
+                <tr>
+                <td><label for="BatchId">Batch Id:</label></td>
+                <td><input type="text" name="batchid" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="BatchNo">Batch No:</label></td>
+                    <td><input type="text" name="batchno" required></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'insertbatch' %}"><button type="button">Clear</button></a>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        {% if form.batchid.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.batchid.errors }}</div>
+                        {% endif %}
+                        {% if form.batchno.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.batchno.errors }}</div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+         </form>
+</div>
+{% endblock %} 

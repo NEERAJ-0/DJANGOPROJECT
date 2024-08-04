@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+{% block title %}Delete Paper{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    <h1>Paper Master -DELETE</h1>
+        <table border="2" style=" border-collapse: collapse; border-color: white; width: 70%; font-size: 20px;">
+            <tr class="thead"> <th>Paper Code</th> <th>Paper Type</th> 
+                <th>Paper ShotName</th> <th>Paper Name</th> <th>Delete</th> </tr>
+
+            {% for x in data %}
+
+            <tr>
+                <td>{{x.papercode}}</td>
+                <td align="center">{{x.papertype}}</td>
+                <td align="center">{{x.papershtname}}</td>
+                <td>{{x.papername}}</td>
+                <td align="center"><a href ="{% url 'delete4' x.id %}" onclick="return confirmDelete();">
+                    <button type="button">Delete</button>
+                </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+</div>
+<script>
+    function confirmDelete() {
+        return confirm('Delete this Paper?');
+    }
+</script>  
+{% endblock %} 

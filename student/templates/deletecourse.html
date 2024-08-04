@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% block title %}Delete Course{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    <h1>Course Master -DELETE</h1>
+        <table border="2" style="border-collapse: collapse; border-color: white; width: 25%; font-size: 20px;">
+            <tr class="thead"> <th>Course ID</th> <th>Course</th> <th>Delete</th> </tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.courseid}}</td>
+                <td>{{x.course}}</td>
+                <td><a href ="{% url 'delete1' pk=x.id %} " onclick="return confirmDelete();">
+                    <button type="button">Delete</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+</div> 
+<script>
+    function confirmDelete() {
+        return confirm('Delete this Course?');
+    }
+</script>
+{% endblock %} 

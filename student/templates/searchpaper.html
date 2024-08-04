@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block title %}Search Paper{% endblock %}
+{% block content %}
+    <div align="center" style="color: white;">
+        <h1>Paper Master -SEARCH</h1>
+        <form method="get">
+            {{ form.as_p }}
+            <a style="color: #4bbaff;" href="{% url 'searchcourse' %}">Clear</a>
+            <button type="submit">Search</button>
+        </form>
+        {% if results %}
+        <h3>Data Found</h3>
+        <table border="2" style="border-collapse: collapse;border-color: white; margin-top: 10px; width: 50%; font-size: 20px;">
+            <tr class="thead"> <th>Paper Code</th> <th>Paper Type</th> <th>Paper ShotName</th> <th>Paper Name</th> </tr>
+            {% for item in results %}
+            <tr align="center">
+                <td>{{ item.papercode }}</td>  
+                <td>{{ item.papertype }}</td>
+                <td>{{ item.papershtname }}</td>
+                <td>{{ item.papername }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+            
+        {% elif form.is_bound %}
+            <h2>Data Not Found</h2>
+        {% endif %}
+    </div>
+{% endblock %}

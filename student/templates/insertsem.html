@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% block title %}Sem Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+         <h1>Sem Master -INSERT</h1>
+         <form method="post" action="{% url 'sem_entry' %}">
+
+            {% csrf_token %}
+            <table style=" background-color: transparent; width: 25%; font-size: 20px;">
+                <tr>
+                <td><label for="SemId">Sem Id:</label></td>
+                <td><input type="text" name="semid" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="Sem">Sem:</label></td>
+                    <td><input type="text" name="sem" required></td>
+                </tr>
+            
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'insertsem' %}"><button type="button">Clear</button></a>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        {% if form.semid.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.semid.errors }}</div>
+                        {% endif %}
+                        {% if form.sem.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.sem.errors }}</div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+         </form>
+</div>
+{% endblock %} 

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Sem Report</title>
+    </head>
+    <body>
+        <div align="right">
+            <button onclick="window.print()">Print</button>
+            <a href="{% url 'home' %}"><button type="button">Home</button></a>   
+        </div>
+        <div align="center">           
+            <h1>Sem Master -REPORT</h1>
+            <h3>Semesters</h3>
+                <table  border="2" style="border-collapse: collapse; width: 50%; font-size: 25px;">
+                    <tr>
+                        <th>Sem ID</th> <th>Semester</th>
+                    </tr>
+
+                    {% for x in data %}
+                    <tr align="center">
+                        <td>{{x.semid}}</td>
+                        <td>{{x.sem}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </body>
+</html>

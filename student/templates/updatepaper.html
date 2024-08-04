@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+{% block title %}Update Paper{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    {% if operation == "paper" %}
+    <h3>Data Updated Successfully...!</h3>
+    <a href="{% url 'updatepaper' %}"><button type="button">View</button></a>
+    {% else %}
+    <h1>Paper Master -UPDATE</h1>
+        <table border="2" style="border-collapse: collapse; border-color: white; width: 70%; font-size: 20px;">
+            <tr class="thead"> <th>Paper Code</th> <th>Paper Type</th> 
+                <th>Paper ShotName</th> <th>Paper Name</th> <th>Edit</th> </tr>
+
+            {% for x in data %}
+
+            <tr>
+                <td>{{x.papercode}}</td>
+                <td align="center">{{x.papertype}}</td>
+                <td align="center">{{x.papershtname}}</td>
+                <td>{{x.papername}}</td>
+                <td align="center"><a href ="{% url 'update4' x.id %}">
+                    <button type="button">Edit</button>
+                </a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+        {% endif %}
+</div>  
+{% endblock %} 

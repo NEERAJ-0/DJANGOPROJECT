@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+{% block title %}Update Transactions{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">  
+    {% if operation == "transaction" %}
+    <h3>Data Updated Successfully...!</h3>
+    <a href="{% url 'updatestudenttrans' %}"><button type="button">View</button></a>
+    {% else %}
+    <h1>Student Internal Transactions -UPDATE</h1>
+        <table border="2" style="border-collapse: collapse;  border-color: white; width: 90%; font-size: 20px;">
+            <tr class="thead"> <th>Batch</th> <th>Course</th> <th>Semester</th> <th>StudentRegNo</th>
+                <th>StudentName</th> <th>ExamType</th> <th>PaperCode</th> 
+                <th>PaperName</th> <th>Marks</th> <th>Edit</th></tr>
+
+            {% for x in data %}
+
+            <tr align="center">
+                <td>{{x.batchno}}</td>
+                <td>{{x.course}}</td>
+                <td>{{x.sem}}</td>
+                <td>{{x.studname.studregno}}</td>
+                <td align="left">{{x.studname.studname}}</td>
+                <td>{{x.examtype}}</td>
+                <td>{{x.papername.papercode}}</td>
+                <td align="left">{{x.papername}}</td>
+                <td>{{x.marks}}</td>
+                <td><a href ="{% url 'update7' marks_id=x.id %}">
+                    <button type="button">Edit</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+</div>  
+{% endblock %} 

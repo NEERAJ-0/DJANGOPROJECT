@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+{% block title %}Display Batch{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+    <h1>Batch Master -DISPLAY</h1>
+        <table  border="2" style="border-collapse: collapse; border-color: white; width: 25%; font-size: 20px;">
+            <tr class="thead"> <th>Batch ID</th> <th>Batch NO</th></tr>
+
+            {% for x in data %}
+            <tr align="center">
+                <td>{{x.batchid}}</td>
+                <td>{{x.batchno}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

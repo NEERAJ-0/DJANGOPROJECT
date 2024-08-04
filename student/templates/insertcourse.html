@@ -1,0 +1,46 @@
+{% extends "master.html" %}
+{% block title %}Course Entry{% endblock %}
+{% block content %}
+<div align="center" style="color: white;">
+        <h1>Course Master -INSERT</h1>
+         <form method="post" action="{% url 'course_entry' %}">
+            {% csrf_token %}
+            <table style=" background-color: transparent; width: 25%; font-size: 20px;">
+                  
+                <tr>
+                    <td><label for="CourseId">Course Id:</label></td>
+                    <td><input type="text" name="courseid" required></td>
+                </tr>
+                   
+                <tr>
+                    <td><label for="Course">Course:</label></td>
+                    <td><input type="text" name="course" required></td>     
+                </tr>
+                  
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="{% url 'insertcourse' %}"><button type="button">Clear</button></a>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        {% if form.courseid.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.courseid.errors }}</div>
+                        {% endif %}
+                        {% if form.course.errors %}
+                        <div style=" font-size: 16px; font-weight: bold; ">{{ form.course.errors }}</div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+         </form>
+
+</div>
+<!-- {% if error_message %}
+<script>
+    alert("Data Already Exits..!");
+</script>
+{% endif %} -->
+{% endblock %} 

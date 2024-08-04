@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("{% static 'img/banner1.jpg' %}");
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff1d;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(58, 58, 58, 0.68);
+            width: 400px;
+            padding: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 80%;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ffffff5b;
+            border-radius: 5px;
+            
+        }
+
+        .form-container button {
+            width: 80%;
+            padding: 10px;
+            background-color: #0291eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-container button:hover {
+            background-color: #4bbaff;
+        }
+
+        .form-container a {
+            color: #4bbaff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="{% static 'img/logo2.png' %}" alt="Logo">
+    </header>
+    <hr style="border-color:#0000007f">
+
+    <!-- Form Section -->
+    <section>
+        <div class="form-container">
+            <h2> Sign Up</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">SIGN UP</button>
+                <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; || All Rights Reserved.</p>
+            <!-- designed by NEERAJ KUMAR -->
+    </footer>
+</body>
+</html>

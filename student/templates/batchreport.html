@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Batch Report</title>
+    </head>
+    <body>
+        <div align="right">
+            <button onclick="window.print()">Print</button>
+            <a href="{% url 'home' %}"><button type="button">Home</button></a>   
+        </div>
+        <div align="center">
+            
+            <h1>Batch Master -REPORT</h1>
+            <h3>Recent Batches</h3>
+                <table  border="2" style="border-collapse: collapse; width: 50%; font-size: 25px;">
+                    <tr>
+                        <th>Batch ID</th> <th>Batch NO</th>
+                    </tr>
+
+                    {% for x in data %}
+                    <tr align="center">
+                        <td>{{x.batchid}}</td>
+                        <td>{{x.batchno}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </body>
+</html>
