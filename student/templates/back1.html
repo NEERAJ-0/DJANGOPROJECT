@@ -5,19 +5,19 @@
         <h3>Data Inserted Successfully...!</h3>
 
         {% if operation == "batch" %}
-        <a href="{% url 'insertbatch' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertbatch' %}"><button type="button">Add+</button></a>
         {% elif operation == "course" %}
-        <a href="{% url 'insertcourse' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertcourse' %}"><button type="button">Add+</button></a>
         {% elif operation == "sem" %}
-        <a href="{% url 'insertsem' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertsem' %}"><button type="button">Add+</button></a>
         {% elif operation == "paper" %}
-        <a href="{% url 'insertpaper' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertpaper' %}"><button type="button">Add+</button></a>
         {% elif operation == "exam" %}
-        <a href="{% url 'insertexam' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertexam' %}"><button type="button">Add+</button></a>
         {% elif operation == "student" %}
-        <a href="{% url 'insertstudent' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertstudent' %}"><button type="button">Add+</button></a>
         {% elif operation == "transaction" %}
-        <a href="{% url 'insertstudtrans' %}"><button type="button">Add Another</button></a>
+        <a href="{% url 'insertstudtrans' %}"><button type="button">Add+</button></a>
         {% endif %}
 </div>
 {% endblock %}

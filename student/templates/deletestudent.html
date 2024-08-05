@@ -16,7 +16,7 @@
                 <td>{{x.studregno}}</td>
                 <td align="left">{{x.studname}}</td>
                 <td><a href ="{% url 'delete6' pk=x.id %}" onclick="return confirmDelete();">
-                    <button type="button">Delete</button>
+                    <i class="fa-regular fa-trash-can"></i>
                 </a></td>
             </tr>
             {% endfor %}

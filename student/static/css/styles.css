@@ -67,6 +67,10 @@ nav ul li a:hover {
 nav ul li.logout {
     margin-left: auto; /* Push the logout button to the right */
 }
+nav ul li a i{
+    font-size: 15px;
+}
+
 
 /* Style the dropdown content */
 .dropdown-content {
@@ -128,16 +132,23 @@ button{
 }
 button[type="submit"]:hover {
     background-color: #4bbaff;
-    color: white;
+    color: #ffffff;
 }
 
 button[type="reset"]:hover {
     background-color: #4bbaff; 
-    color: white;
+    color: #ffffff;
 }
 
 button[type="button"]:hover {
     background-color: #4bbaff;
-    color: white;
+    color: #ffffff;
+}
+
+.fa-regular{
+    color:#ffffff
+}
+.fa-regular:hover{
+    color: #4bbaff; 
 }
 

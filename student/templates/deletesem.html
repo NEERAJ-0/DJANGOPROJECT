@@ -13,7 +13,7 @@
                 <td>{{x.semid}}</td>
                 <td>{{x.sem}}</td>
                 <td><a href ="{% url 'delete3' pk=x.id %}" onclick="return confirmDelete();">
-                    <button type="button">Delete</button>
+                    <i class="fa-regular fa-trash-can"></i>
                 </a></td>
             </tr>
             {% endfor %}

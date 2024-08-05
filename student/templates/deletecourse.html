@@ -12,7 +12,7 @@
                 <td>{{x.courseid}}</td>
                 <td>{{x.course}}</td>
                 <td><a href ="{% url 'delete1' pk=x.id %} " onclick="return confirmDelete();">
-                    <button type="button">Delete</button>
+                    <i class="fa-regular fa-trash-can"></i>
                 </a></td>
             </tr>
             {% endfor %}

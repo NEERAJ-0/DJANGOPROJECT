@@ -13,7 +13,7 @@
                 <td>{{x.batchid}}</td>
                 <td>{{x.batchno}}</td> 
                 <td><a href ="{% url 'delete2' pk=x.id %}" onclick="return confirmDelete();">
-                    <button type="button">Delete</button>
+                    <i class="fa-regular fa-trash-can"></i>
                 </a></td>
             </tr>
             {% endfor %}
