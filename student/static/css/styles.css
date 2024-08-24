@@ -124,11 +124,13 @@ footer{
 
 
 button{
-    border: none;
-    border-radius: 3px;
-    padding:3px 8px;
+    border: 2px 2px;
+    border-color: #63c3ff;
+    border-radius: 6px;
+    padding:1px 6px;
     font-size: 15px;
-    background-color: #ffffff;
+    color: #63c3ff;
+    background-color: #00000063;
 }
 button[type="submit"]:hover {
     background-color: #4bbaff;
@@ -143,6 +145,19 @@ button[type="reset"]:hover {
 button[type="button"]:hover {
     background-color: #4bbaff;
     color: #ffffff;
+}
+
+button[type="logout"] {
+    border: 2px 2px;
+    border-color: #63c3ff;
+    border-radius: 6px;
+    padding:2px 4px;
+    font-size: 15px;
+    background-color: #009dff;
+    color: #ffffff;
+}
+button[type="logout"]:hover {
+    background-color: #4bbaff;
 }
 
 .fa-regular{
