@@ -18,8 +18,7 @@
         section {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            height: fit-content; 
         }
 
         .form-container {
@@ -27,19 +26,20 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(58, 58, 58, 0.68);
             width: 400px;
+            height: fit-content;
             padding: 5px;
             text-align: center;
             color: white;
         }
 
         .form-container input[type="text"],
-        .form-container input[type="password"] {
+        .form-container input[type="password"],
+        .form-container input[type="email"] {
             width: 80%;
             padding: 5px;
             margin: 5px;
             border: 1px solid #ffffff5b;
             border-radius: 5px;
-            
         }
 
         .form-container button {
@@ -63,7 +63,31 @@
             color: #4bbaff;
             font-size: 15px;
         }
+
+        .password-feedback {
+            font-size: 14px;
+            margin: 5px;
+        }
     </style>
+    <script>
+        function validatePassword() {
+            const password = document.getElementById("id_password1");
+            const feedback = document.getElementById("password-feedback");
+
+            const length = password.value.length >= 8;
+            const uppercase = /[A-Z]/.test(password.value);
+            const lowercase = /[a-z]/.test(password.value);
+            const number = /[0-9]/.test(password.value);
+
+            if (length && uppercase && lowercase && number) {
+                feedback.style.color = "#4bbaff";
+                feedback.textContent = "Password is strong.";
+            } else {
+                feedback.style.color = "red";
+                feedback.textContent = "Password must be at least 8 characters long, contain uppercase and lowercase letters, and a number.";
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -75,10 +99,18 @@
     <!-- Form Section -->
     <section>
         <div class="form-container">
-            <h2> Sign Up</h2>
+            <h2>Sign Up</h2>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.username.label_tag }}<br>
+                {{ form.username }}<br>
+                {{ form.email.label_tag }}<br>
+                {{ form.email }}<br>
+                {{ form.password1.label_tag }}<br>
+                {{ form.password1 }}<br>
+                <div id="password-feedback" class="password-feedback">Password must be at least 8 characters long, contain uppercase and lowercase letters, and a number.</div>
+                {{ form.password2.label_tag }}<br>
+                {{ form.password2 }}<br>
                 <button type="submit">SIGN UP</button>
                 <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
             </form>
@@ -88,7 +120,10 @@
     <!-- Footer -->
     <footer>
         <p>Copyright &copy; || All Rights Reserved.</p>
-            <!-- designed by NEERAJ KUMAR -->
+        <!-- designed by NEERAJ KUMAR -->
     </footer>
+    <script>
+        document.getElementById("id_password1").addEventListener("input", validatePassword);
+    </script>
 </body>
 </html>
