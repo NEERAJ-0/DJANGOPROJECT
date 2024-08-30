@@ -84,7 +84,7 @@
                 feedback.textContent = "Password is strong.";
             } else {
                 feedback.style.color = "red";
-                feedback.textContent = "Password must be at least 8 characters long, contain uppercase and lowercase letters, and a number.";
+                feedback.textContent = "Password must be at least 8 characters, uppercase and lowercase letters, and a number, also no personal info.";
             }
         }
     </script>
@@ -108,7 +108,7 @@
                 {{ form.email }}<br>
                 {{ form.password1.label_tag }}<br>
                 {{ form.password1 }}<br>
-                <div id="password-feedback" class="password-feedback">Password must be at least 8 characters long, contain uppercase and lowercase letters, and a number.</div>
+                <div id="password-feedback" class="password-feedback">Password must be at least 8 characters, uppercase and lowercase letters, and a number, also no personal info.</div>
                 {{ form.password2.label_tag }}<br>
                 {{ form.password2 }}<br>
                 <button type="submit">SIGN UP</button>
